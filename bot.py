@@ -43,10 +43,12 @@ async def on_ready():
 	print("Lang Bot is ONLINE!")
 	print("Bot's name on server '" + bot.user.name + "' with ID:" + bot.user.id)
 	print("\n@GITHUB:\thttps://github.com/CobyHong\n@Website:\twww.coby.tech\n@Email:\t\tCobyHong@gmail.com")
+	print("GOOD")
 
 #command functions
 @bot.event
 async def on_message(message):
+	count = 0;
 	for i in languages.LANGUAGES:
 		if message.content.startswith("!{} ".format(i[0])):
 			#removes command portion to user's message
@@ -58,6 +60,9 @@ async def on_message(message):
 			embed.add_field(name="__{}__:".format(message.author), value='"'+msg+' "', inline=True)
 			embed.add_field(name=":arrow_down:", value=translator.translate('"'+msg+' "', dest= i[0]).text, inline=True)
 			await bot.send_message(message.channel, embed=embed)
+			while count < 10:
+				await bot.delete_message(message)
+				count += 1;
 	
 	#ping function to see if bot is online
 	if message.content.startswith("!status"):
