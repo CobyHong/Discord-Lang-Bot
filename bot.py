@@ -48,7 +48,6 @@ async def on_ready():
 #command functions
 @bot.event
 async def on_message(message):
-	count = 0;
 	for i in languages.LANGUAGES:
 		if message.content.startswith("!{} ".format(i[0])):
 			#removes command portion to user's message
@@ -60,9 +59,6 @@ async def on_message(message):
 			embed.add_field(name="__{}__:".format(message.author), value='"'+msg+' "', inline=True)
 			embed.add_field(name=":arrow_down:", value=translator.translate('"'+msg+' "', dest= i[0]).text, inline=True)
 			await bot.send_message(message.channel, embed=embed)
-			while count < 10:
-				await bot.delete_message(message)
-				count += 1;
 	
 	#ping function to see if bot is online
 	if message.content.startswith("!status"):
