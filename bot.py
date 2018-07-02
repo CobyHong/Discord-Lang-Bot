@@ -73,4 +73,4 @@ async def on_message(message):
 		await bot.send_message(message.author, "Hello, my name is Coby.\nI'm a sad Asian kid who got bored one summer night and made this. \n\nHere's my website:	www.coby.tech")
 
 #Running bot off this token ID
-bot.run(token)
+bot.run("NDYzMjAyNDI0NTkzODQyMTg3.DhtD8g.3nIbn6ZMhEuZKNgjb57gE9iE790")
