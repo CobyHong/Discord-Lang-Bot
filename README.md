@@ -12,7 +12,7 @@
    ![language-tag] [message] - declare language you want to translate followed by your message.<br />
 
 EXAMPLE:
-> ![alt text](https://imgur.com/J337SBW)
+> ![alt text](https://i.imgur.com/J337SBW.png)
    
 
 ## Installation
